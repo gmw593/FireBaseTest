@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Lookup{% endblock %}
+
+{% block content %}
+    <h1>Single Company Lookup</h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="company">Enter a company</label>
+        <input type="text" id="company" name="company" />
+      </div>
+      <div class="form-group">
+        <label for="number_of_pages">How many pages would you like to scrape?</label>
+        <input type="number" id="number_of_pages" name="number_of_pages" min="1" />
+      </div>
+      <div class="form-group">
+        <label for="url">What is the URL?</label>
+        <input type="text" id="url" name="url" />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+    {% if result %}
+    <p class="company-info"><b>Company Name:</b> {{ result.name }}</p>
+    <p class="company-info">
+      <b>Company Description:</b> {{ result.description }}
+    </p>
+    <p class="company-info"><b>Company Tags:</b> {{ result.tags }}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %}Bulk Search{% endblock %} {% block
+content %}
+<h1>Bulk Search From Spreadsheet</h1>
+<p>lmao</p>
+
+<!-- HTMX Button -->
+<button hx-post="/backend/bulk" hx-target="#bulk-result" hx-swap="innerHTML">
+    Run Bulk Search
+</button>
+
+<!-- Container to display the result -->
+<div id="bulk-result"></div>
+
+{% endblock %}

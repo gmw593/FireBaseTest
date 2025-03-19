@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RevelOne{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://cdn.prod.website-files.com/66ffa15944d95316c51a25b2/6701610cf02fb8e8165982eb_revelone_logo.svg" alt="Logo">
+        </div>
+        <nav>
+            <a href="/" class="menu-item">Dashboard</a>
+            <a href="/lookup" class="menu-item">Company Lookup</a>
+            <a href="/bulk" class="menu-item">Bulk Search</a>
+            <a href="#" class="menu-item">Settings</a>
+            <a href="/logout" class="menu-item logout">Logout</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
