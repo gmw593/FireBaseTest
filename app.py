@@ -1,5 +1,10 @@
 from flask import Flask
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+openAIkey = os.getenv('OPENAI')
 
 app = Flask(__name__)
 
